@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body style="background-image: url('https://trio.dev/static/d358b933553e621c0c5797f49252c8b2/7fad34d867a32f732b37534ff013e916.jpg'); width: 100%;">
+  
+
+<div  ng-init="myText='Angular Class'">
+    <h1 style="text-align: center;">{{myText}}</h1>
+
+    <input style="margin-left: 670px"; type="text" placeholder="ng_model" ng-model="name">
+   
+
+    
+    <div ng-controller='languages'>
+        <br>
+        
+        <button style="margin-left:735px ;" ng-click="submit()"> SUBMIT</button>
+        
+        <p  style="text-align: center;">
+            
+            {{name}}
+        </p>
+
+    </div>
+
+    
+
+<div ng-init="favlanguage=[{course:'java',extension:'101'},
+  {course:'php',extension:'102'} ,
+  {course:'c',extension:'103'}]">    
+
+  <!-- ng-repeat it repeat like a loop --> 
+<ul style="margin-left: 670px;">
+    <li ng-repeat="language in favlanguage">
+        Course Name :{{language.course}}
+        <br>
+        Course Code : {{language.extension}}
+    </li>
+</ul>
+
+<script>
+    var application =angular.module('myapp',[]);
+    application.controller('languages',($scope)=>
+    {
+        $scope.submit=function(){
+            $scope.name= "Sumbitted"
+        }
+            
+    })
+</script>
+  
+
+</div>
+</body>
+</html>
